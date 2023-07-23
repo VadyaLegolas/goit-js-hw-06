@@ -22,3 +22,28 @@ button {
   padding: 8px 12px;
   cursor: pointer;
 }
+
+ul{
+  margin-top: 0;
+  margin-bottom: 0;
+  padding-left: 0;
+}
+
+img {
+  display: block;
+  max-width: 100%;
+  width: 600px;
+  height: auto;
+}
+
+.list {
+  list-style: none;
+}
+
+.gallery {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 15px;
+  justify-content: space-around;
+  align-items: start;
+}
