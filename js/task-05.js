@@ -2,3 +2,16 @@
 
 // <input type="text" id="name-input" placeholder="Please enter your name" />
 // <h1>Hello, <span id="name-output">Anonymous</span>!</h1>
+
+const refs = {
+  nameInput: document.querySelector("#name-input"),
+  nameOutput: document.querySelector("#name-output"),
+};
+const defaultNameOutput = refs.nameOutput.textContent;
+
+refs.nameInput.addEventListener("input", (e) => {
+  if (e.currentTarget.value != "") {
+    return (refs.nameOutput.textContent = e.currentTarget.value);
+  }
+  return (refs.nameOutput.textContent = defaultNameOutput);
+});
