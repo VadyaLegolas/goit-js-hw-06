@@ -26,7 +26,6 @@ const refs = {
 
 refs.btnCreate.addEventListener("click", onBtnCreateClick);
 refs.btnDestroy.addEventListener("click", destroyBoxes);
-const amount = Number(refs.input.value);
 const startWidth = 30;
 const startHeight = 30;
 
@@ -41,9 +40,9 @@ function onBtnCreateClick(e) {
 
 function createBoxes(amount) {
   const divsArray = [];
-  for (let index = 0; index < amount; index += 1) {
-    const divEl = `<div style="width: ${startWidth + index * 10}px; height: ${
-      startHeight + index * 10
+  for (let i = 0; i < amount; i += 1) {
+    const divEl = `<div style="width: ${startWidth + i * 10}px; height: ${
+      startHeight + i * 10
     }px; background-color: ${getRandomHexColor()};"></div>`;
     divsArray.push(divEl);
   }
