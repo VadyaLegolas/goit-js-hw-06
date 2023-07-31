@@ -28,12 +28,12 @@ const refs = {
   inputEl: document.querySelector("#validation-input"),
 };
 
-const onInputBlur = (e) => {
+refs.inputEl.addEventListener("blur", onInputBlur);
+
+function onInputBlur(e) {
   if (Number(e.currentTarget.value.length >= refs.inputEl.dataset["length"])) {
     refs.inputEl.classList.remove("invalid");
     return refs.inputEl.classList.add("valid");
   }
   return refs.inputEl.classList.add("invalid");
-};
-
-refs.inputEl.addEventListener("blur", onInputBlur);
+}

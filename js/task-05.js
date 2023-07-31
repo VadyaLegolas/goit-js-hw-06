@@ -9,11 +9,11 @@ const refs = {
 };
 const defaultNameOutput = refs.nameOutput.textContent;
 
-const onAddValueToOutput = (e) => {
+refs.nameInput.addEventListener("input", onNameInputInput);
+
+function onNameInputInput(e) {
   if (e.currentTarget.value != "") {
     return (refs.nameOutput.textContent = e.currentTarget.value);
   }
   return (refs.nameOutput.textContent = defaultNameOutput);
-};
-
-refs.nameInput.addEventListener("input", onAddValueToOutput);
+}

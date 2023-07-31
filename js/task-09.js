@@ -8,11 +8,19 @@
 
 // Для генерування випадкового кольору використовуй функцію getRandomHexColor.
 
-// function getRandomHexColor() {
-//   return `#${Math.floor(Math.random() * 16777215)
-//     .toString(16)
-//     .padStart(6, 0)}`;
-// }
+const refs = {
+  body: document.querySelector("body"),
+  spanColor: document.querySelector(".color"),
+  btnChangeColor: document.querySelector(".change-color"),
+};
+
+refs.btnChangeColor.addEventListener("click", onBtnChangeColorClick);
+
+function onBtnChangeColorClick(e) {
+  const color = getRandomHexColor();
+  refs.spanColor.textContent = color;
+  return (refs.body.style.backgroundColor = color);
+}
 
 function getRandomHexColor() {
   return `#${Math.floor(Math.random() * 16777215)

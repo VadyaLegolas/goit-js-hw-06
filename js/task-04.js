@@ -1,15 +1,33 @@
-const refs = {
-  valueEl: document.querySelector("#value"),
+// Завдання 4
+// Лічильник складається зі спану і кнопок, які по кліку повинні збільшувати і зменшувати його значення на одиницю.
 
+// <div id="counter">
+//   <button type="button" data-action="decrement">-1</button>
+//   <span id="value">0</span>
+//   <button type="button" data-action="increment">+1</button>
+// </div>
+
+// Створи змінну counterValue, в якій буде зберігатися поточне значення лічильника та ініціалізуй її значенням 0.
+// Додай слухачів кліків до кнопок, всередині яких збільшуй або зменшуй значення лічильника.
+// Оновлюй інтерфейс новим значенням змінної counterValue.
+
+const refs = {
+  counterValue: document.querySelector("#value"),
   buttonDec: document.querySelector('button[data-action="decrement"]'),
   buttonInc: document.querySelector('button[data-action="increment"]'),
 };
 
-const operationDecrement = () =>
-  (refs.valueEl.textContent = Number(refs.valueEl.textContent) - 1);
-const operationIncrement = () =>
-  (refs.valueEl.textContent = Number(refs.valueEl.textContent) + 1);
+refs.counterValue.textContent = 0;
 
-refs.buttonDec.addEventListener("click", operationDecrement);
+refs.buttonDec.addEventListener("click", onButtonDecrementClick);
 
-refs.buttonInc.addEventListener("click", operationIncrement);
+refs.buttonInc.addEventListener("click", onButtonIncrementClick);
+
+function onButtonDecrementClick() {
+  return (refs.counterValue.textContent =
+    Number(refs.counterValue.textContent) - 1);
+}
+function onButtonIncrementClick() {
+  return (refs.counterValue.textContent =
+    Number(refs.counterValue.textContent) + 1);
+}
