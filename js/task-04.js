@@ -12,22 +12,24 @@
 // Оновлюй інтерфейс новим значенням змінної counterValue.
 
 const refs = {
-  counterValue: document.querySelector("#value"),
+  value: document.querySelector("#value"),
   buttonDec: document.querySelector('button[data-action="decrement"]'),
   buttonInc: document.querySelector('button[data-action="increment"]'),
 };
 
-refs.counterValue.textContent = 0;
+let counterValue = 0;
 
 refs.buttonDec.addEventListener("click", onButtonDecrementClick);
 
 refs.buttonInc.addEventListener("click", onButtonIncrementClick);
 
 function onButtonDecrementClick() {
-  return (refs.counterValue.textContent =
-    Number(refs.counterValue.textContent) - 1);
+  counterValue = Number(refs.value.textContent);
+  counterValue -= 1;
+  return (refs.value.textContent = counterValue);
 }
 function onButtonIncrementClick() {
-  return (refs.counterValue.textContent =
-    Number(refs.counterValue.textContent) + 1);
+  counterValue = Number(refs.value.textContent);
+  counterValue += 1;
+  return (refs.value.textContent = counterValue);
 }

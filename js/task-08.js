@@ -38,8 +38,6 @@ function onFormSubmit(e) {
     alert("всі поля повинні бути заповнені");
     return;
   }
-
-  console.log("Email: ", elements.email);
-  console.log("Password: ", elements.password);
+  console.log(elements);
   e.currentTarget.reset();
 }

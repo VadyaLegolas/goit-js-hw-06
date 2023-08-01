@@ -31,9 +31,10 @@ const refs = {
 refs.inputEl.addEventListener("blur", onInputBlur);
 
 function onInputBlur(e) {
-  if (Number(e.currentTarget.value.length >= refs.inputEl.dataset["length"])) {
+  if (e.currentTarget.value.length === Number(refs.inputEl.dataset["length"])) {
     refs.inputEl.classList.remove("invalid");
     return refs.inputEl.classList.add("valid");
   }
+  console.log("no");
   return refs.inputEl.classList.add("invalid");
 }
