@@ -23,13 +23,24 @@ refs.buttonDec.addEventListener("click", onButtonDecrementClick);
 
 refs.buttonInc.addEventListener("click", onButtonIncrementClick);
 
+function operationsOfValue(operation) {
+  let val = Number(refs.value.textContent); 
+  switch (operation) {
+    case "+":
+      val += 1;
+      break;
+    case "-":
+      val -= 1;
+      break;
+  }
+  return val;
+}
+
 function onButtonDecrementClick() {
-  counterValue = Number(refs.value.textContent);
-  counterValue -= 1;
+  counterValue = operationsOfValue('-')
   return (refs.value.textContent = counterValue);
 }
 function onButtonIncrementClick() {
-  counterValue = Number(refs.value.textContent);
-  counterValue += 1;
+  counterValue = operationsOfValue('+')
   return (refs.value.textContent = counterValue);
 }
