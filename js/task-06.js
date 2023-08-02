@@ -35,6 +35,6 @@ function onInputBlur(e) {
     refs.inputEl.classList.remove("invalid");
     return refs.inputEl.classList.add("valid");
   }
-  console.log("no");
+  refs.inputEl.classList.remove("valid");
   return refs.inputEl.classList.add("invalid");
 }
