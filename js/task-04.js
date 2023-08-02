@@ -24,12 +24,10 @@ refs.buttonDec.addEventListener("click", onButtonDecrementClick);
 refs.buttonInc.addEventListener("click", onButtonIncrementClick);
 
 function onButtonDecrementClick() {
-  counterValue = Number(refs.value.textContent);
   counterValue -= 1;
   return (refs.value.textContent = counterValue);
 }
 function onButtonIncrementClick() {
-  counterValue = Number(refs.value.textContent);
   counterValue += 1;
   return (refs.value.textContent = counterValue);
 }
